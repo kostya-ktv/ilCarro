@@ -2,8 +2,7 @@ package co.il.telran.ilcarro.application.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "comment")
@@ -13,4 +12,6 @@ import javax.persistence.Table;
 @Setter
 @ToString
 public class Comment extends BaseEntity{
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 }
